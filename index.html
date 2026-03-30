@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sahina ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    text-align: center;
+    font-family: Arial;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: white;
+}
+
+h1 {
+    margin-top: 30px;
+}
+
+img {
+    width: 220px;
+    margin: 10px;
+    border-radius: 15px;
+    animation: float 4s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+video {
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.text {
+    margin: 25px;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    background: red;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<h1>❤️ Sahina ❤️</h1>
+
+<img id="img1">
+<img id="img2">
+
+<div class="text">
+    Sahina... 💖<br><br>
+    Tumi sudhu amar life er ekta part na, tumi amar pura duniya 🌍<br><br>
+    Jokhon ami hariye jai, tomar kotha mone porlei ami abar nijeke khuje pai 🥺<br><br>
+    Tui amar sobcheye boro happiness, amar sobcheye boro strength ❤️<br><br>
+    Ami jani na future ki ache, kintu ami sudhu eta jani...<br><br>
+    Amar future sudhu tomar sathei dekhte chai 💍<br><br>
+    Tumi thakle amar sob thik lage, tumi na thakle kichui valo lage na 💔<br><br>
+    I Love You So Much Sahina ❤️🥰
+</div>
+
+<!-- 🎵 Video Song -->
+<video id="video" controls></video>
+
+<br>
+
+<button onclick="playSong()">Play Song 💖</button>
+
+<script>
+// image links
+const img1Link = "https://raw.githubusercontent.com/Dipok198/Sahina/main/sahina.txt";
+const img2Link = "https://raw.githubusercontent.com/Dipok198/Sahina/main/sahina2.txt";
+
+// new video/song link
+const videoLink = "https://raw.githubusercontent.com/Dipok198/Sahina90/main/lv_0_20260301211729.mp4";
+
+// load images
+async function loadImage(id, link) {
+    const res = await fetch(link);
+    const base64 = await res.text();
+    document.getElementById(id).src = "data:image/jpeg;base64," + base64;
+}
+
+loadImage("img1", img1Link);
+loadImage("img2", img2Link);
+
+// play song
+function playSong() {
+    const video = document.getElementById("video");
+    video.src = videoLink;
+    video.play();
+}
+</script>
+
+</body>
+</html>
